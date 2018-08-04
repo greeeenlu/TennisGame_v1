@@ -5,12 +5,27 @@ namespace TennisGame_v1
     [TestClass]
     public class UnitTest1
     {
+        private Game _game = new Game();
+        private int _firstPlayerScore;
+
         [TestMethod]
         public void LoveAll()
         {
-            var game = new Game();
-            var score = game.GetScore();
-            Assert.AreEqual("Love_All", score);
+            Assert.AreEqual("Love_All", _game.GetScore());
+        }
+        [TestMethod]
+        public void FifteenLove()
+        {
+            GivenFirstPlayerScore(1);
+            Assert.AreEqual("Fifteen_Love", _game.GetScore());
+        }
+
+        private void GivenFirstPlayerScore(int score)
+        {
+            for (int i = 0; i < score; i++)
+            {
+                _game.FirstPlayerGotScore();
+            }
         }
     }
 }
