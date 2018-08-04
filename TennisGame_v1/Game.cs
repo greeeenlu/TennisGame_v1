@@ -42,6 +42,10 @@ namespace TennisGame_v1
                     {
                         return (scoreDifferencePlvsP2 > 0) ? "Player1_Advance" : "Player2_Advance";
                     }
+                    else
+                    {
+                        return (scoreDifferencePlvsP2 > 0) ? "Player1_Win" : "Player2_Win";
+                    }
                 }
                 return _scoreDict[_firstPlayerScore] + "_" + _scoreDict[_secondPlayerScore];
             }
