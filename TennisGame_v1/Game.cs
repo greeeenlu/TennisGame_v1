@@ -22,7 +22,14 @@ namespace TennisGame_v1
 
             if (isSameSore)
             {
-                return _scoreDict[_firstPlayerScore] + "_All";
+                if (_firstPlayerScore >= 3)
+                {
+                    return "Deuce";
+                }
+                else
+                {
+                    return _scoreDict[_firstPlayerScore] + "_All";
+                }
             }
             else
             {
