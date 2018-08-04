@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace TennisGame_v1
 {
@@ -7,8 +6,11 @@ namespace TennisGame_v1
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void LoveAll()
         {
+            var game = new Game();
+            var score = game.GetScore();
+            Assert.AreEqual("Love_All", score);
         }
     }
 }
