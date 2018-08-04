@@ -32,24 +32,28 @@ namespace TennisGame_v1
             GivenFirstPlayerScore(2);
             ResultShouldBe("Thirty_Love");
         }
+
         [TestMethod]
         public void Forty_Love()
         {
             GivenFirstPlayerScore(3);
             ResultShouldBe("Forty_Love");
         }
+
         [TestMethod]
         public void Love_Fifteen()
         {
             GivenSecondPlayerScore(1);
             ResultShouldBe("Love_Fifteen");
         }
+
         [TestMethod]
         public void Love_Thirty()
         {
             GivenSecondPlayerScore(2);
             ResultShouldBe("Love_Thirty");
         }
+
         [TestMethod]
         public void Fifteen_All()
         {
@@ -57,6 +61,7 @@ namespace TennisGame_v1
             GivenSecondPlayerScore(1);
             ResultShouldBe("Fifteen_All");
         }
+
         [TestMethod]
         public void Deuce()
         {
@@ -64,6 +69,7 @@ namespace TennisGame_v1
             GivenSecondPlayerScore(3);
             ResultShouldBe("Deuce");
         }
+
         [TestMethod]
         public void Player1_Advance()
         {
@@ -79,21 +85,22 @@ namespace TennisGame_v1
             GivenSecondPlayerScore(6);
             ResultShouldBe("Player2_Advance");
         }
+
         [TestMethod]
         public void Player1_Win()
         {
             GivenFirstPlayerScore(5);
             GivenSecondPlayerScore(3);
             ResultShouldBe("Player1_Win");
-        }[TestMethod]
+        }
+
+        [TestMethod]
         public void Player2_Win()
         {
             GivenFirstPlayerScore(1);
             GivenSecondPlayerScore(4);
             ResultShouldBe("Player2_Win");
         }
-
-
 
         private void GivenSecondPlayerScore(int score)
         {
@@ -102,7 +109,6 @@ namespace TennisGame_v1
                 _game.SecondPlayerGotscore();
             }
         }
-
 
         private void GivenFirstPlayerScore(int score)
         {

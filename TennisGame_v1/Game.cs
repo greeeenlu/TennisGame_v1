@@ -16,7 +16,6 @@ namespace TennisGame_v1
             { 3, "Forty" }
         };
 
-
         public string GetScore()
         {
             var isSameSore = _firstPlayerScore == _secondPlayerScore;
@@ -50,7 +49,6 @@ namespace TennisGame_v1
                 return _scoreDict[_firstPlayerScore] + "_" + _scoreDict[_secondPlayerScore];
             }
         }
-
 
         public void FirstPlayerGotScore()
         {
