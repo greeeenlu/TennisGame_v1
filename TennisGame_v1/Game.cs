@@ -18,7 +18,9 @@ namespace TennisGame_v1
 
         public string GetScore()
         {
-            if (_firstPlayerScore == _secondPlayerScore)
+            var isSameSore = _firstPlayerScore == _secondPlayerScore;
+
+            if (isSameSore)
             {
                 return _scoreDict[_firstPlayerScore] + "_All";
             }
@@ -26,7 +28,6 @@ namespace TennisGame_v1
             {
                 return _scoreDict[_firstPlayerScore] + "_" + _scoreDict[_secondPlayerScore];
             }
-
         }
 
 
