@@ -11,20 +11,48 @@ namespace TennisGame_v1
         [TestMethod]
         public void LoveAll()
         {
-            Assert.AreEqual("Love_All", _game.GetScore());
+            ResultShouldBe("Love_All");
         }
+
+        private void ResultShouldBe(string resllt)
+        {
+            Assert.AreEqual(resllt, _game.GetScore());
+        }
+
         [TestMethod]
         public void FifteenLove()
         {
             GivenFirstPlayerScore(1);
-            Assert.AreEqual("Fifteen_Love", _game.GetScore());
+            ResultShouldBe("Fifteen_Love");
         }
+
         [TestMethod]
         public void Thirty_Love()
         {
             GivenFirstPlayerScore(2);
-            Assert.AreEqual("Thirty_Love", _game.GetScore());
+            ResultShouldBe("Thirty_Love");
         }
+        [TestMethod]
+        public void Forty_Love()
+        {
+            GivenFirstPlayerScore(3);
+            ResultShouldBe("Forty_Love");
+        }
+        [TestMethod]
+        public void Love_Fifteen()
+        {
+            GivenSecondPlayerScore(1);
+            ResultShouldBe("Love_Fifteen");
+        }
+
+        private void GivenSecondPlayerScore(int score)
+        {
+            for (int i = 0; i < score; i++)
+            {
+                _game.SecondPlayerGotscore();
+            }
+        }
+
 
         private void GivenFirstPlayerScore(int score)
         {
