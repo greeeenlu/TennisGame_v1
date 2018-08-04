@@ -20,7 +20,7 @@ namespace TennisGame_v1
         }
 
         [TestMethod]
-        public void FifteenLove()
+        public void Fifteen_Love()
         {
             GivenFirstPlayerScore(1);
             ResultShouldBe("Fifteen_Love");
@@ -49,6 +49,13 @@ namespace TennisGame_v1
         {
             GivenSecondPlayerScore(2);
             ResultShouldBe("Love_Thirty");
+        }
+        [TestMethod]
+        public void Fifteen_All()
+        {
+            GivenFirstPlayerScore(1);
+            GivenSecondPlayerScore(1);
+            ResultShouldBe("Fifteen_All");
         }
 
         private void GivenSecondPlayerScore(int score)

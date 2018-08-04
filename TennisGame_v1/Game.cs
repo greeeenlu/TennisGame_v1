@@ -18,17 +18,15 @@ namespace TennisGame_v1
 
         public string GetScore()
         {
-            if (_secondPlayerScore >= 1)
+            if (_firstPlayerScore == _secondPlayerScore)
             {
-                return "Love_" + _scoreDict[_secondPlayerScore];
+                return _scoreDict[_firstPlayerScore] + "_All";
+            }
+            else
+            {
+                return _scoreDict[_firstPlayerScore] + "_" + _scoreDict[_secondPlayerScore];
             }
 
-            if ( _firstPlayerScore >=1 )
-            {
-                return _scoreDict[_firstPlayerScore] + "_Love";
-            }
-     
-            return "Love_All";
         }
 
 
