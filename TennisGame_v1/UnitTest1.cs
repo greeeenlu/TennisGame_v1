@@ -64,6 +64,13 @@ namespace TennisGame_v1
             GivenSecondPlayerScore(3);
             ResultShouldBe("Deuce");
         }
+        [TestMethod]
+        public void Player1_Advance()
+        {
+            GivenFirstPlayerScore(4);
+            GivenSecondPlayerScore(3);
+            ResultShouldBe("Player1_Advance");
+        }
 
         private void GivenSecondPlayerScore(int score)
         {

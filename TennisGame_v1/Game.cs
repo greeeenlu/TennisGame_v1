@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace TennisGame_v1
 {
@@ -33,6 +34,13 @@ namespace TennisGame_v1
             }
             else
             {
+                if (_firstPlayerScore > 3 || _secondPlayerScore > 3)
+                {
+                    if (Math.Abs(_firstPlayerScore - _secondPlayerScore) == 1)
+                    {
+                        return (_firstPlayerScore - _secondPlayerScore > 0) ? "Player1_Advance" : "Player2_Advance";
+                    }
+                }
                 return _scoreDict[_firstPlayerScore] + "_" + _scoreDict[_secondPlayerScore];
             }
         }
