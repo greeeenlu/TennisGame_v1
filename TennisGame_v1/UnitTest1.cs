@@ -44,6 +44,12 @@ namespace TennisGame_v1
             GivenSecondPlayerScore(1);
             ResultShouldBe("Love_Fifteen");
         }
+        [TestMethod]
+        public void Love_Thirty()
+        {
+            GivenSecondPlayerScore(2);
+            ResultShouldBe("Love_Thirty");
+        }
 
         private void GivenSecondPlayerScore(int score)
         {
