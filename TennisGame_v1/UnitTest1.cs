@@ -19,6 +19,12 @@ namespace TennisGame_v1
             GivenFirstPlayerScore(1);
             Assert.AreEqual("Fifteen_Love", _game.GetScore());
         }
+        [TestMethod]
+        public void Thirty_Love()
+        {
+            GivenFirstPlayerScore(2);
+            Assert.AreEqual("Thirty_Love", _game.GetScore());
+        }
 
         private void GivenFirstPlayerScore(int score)
         {
