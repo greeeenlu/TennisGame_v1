@@ -85,6 +85,12 @@ namespace TennisGame_v1
             GivenFirstPlayerScore(5);
             GivenSecondPlayerScore(3);
             ResultShouldBe("Player1_Win");
+        }[TestMethod]
+        public void Player2_Win()
+        {
+            GivenFirstPlayerScore(1);
+            GivenSecondPlayerScore(4);
+            ResultShouldBe("Player2_Win");
         }
 
 
