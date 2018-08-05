@@ -18,36 +18,54 @@ namespace TennisGame_v1
 
         public string GetScore()
         {
-            var isSameSore = _firstPlayerScore == _secondPlayerScore;
+            return IsSameScore() 
+                ? (IsDeuce() ? Deuce() : SameScore()) 
+                : (IsReadyForWin() ? AdvScore() : LookupScore());
+        }
 
-            if (isSameSore)
-            {
-                if (_firstPlayerScore >= 3)
-                {
-                    return "Deuce";
-                }
-                else
-                {
-                    return _scoreDict[_firstPlayerScore] + "_All";
-                }
-            }
-            else
-            {
-                if (_firstPlayerScore > 3 || _secondPlayerScore > 3)
-                {
-                    var scoreDifferencePlvsP2 = _firstPlayerScore - _secondPlayerScore;
+        private string AdvScore()
+        {
+            return AdvPlayer() + (IsAdvance() ? "_Advance" : "_Win");
+        }
 
-                    if (Math.Abs(scoreDifferencePlvsP2) == 1)
-                    {
-                        return (scoreDifferencePlvsP2 > 0) ? "Player1_Advance" : "Player2_Advance";
-                    }
-                    else
-                    {
-                        return (scoreDifferencePlvsP2 > 0) ? "Player1_Win" : "Player2_Win";
-                    }
-                }
-                return _scoreDict[_firstPlayerScore] + "_" + _scoreDict[_secondPlayerScore];
-            }
+        private string LookupScore()
+        {
+            return _scoreDict[_firstPlayerScore] + "_" + _scoreDict[_secondPlayerScore];
+        }
+
+        private bool IsAdvance()
+        {
+            return Math.Abs(_firstPlayerScore - _secondPlayerScore) == 1;
+        }
+
+        private string AdvPlayer()
+        {
+            return _firstPlayerScore > _secondPlayerScore ? "Player1" : "Player2";
+        }
+
+        private bool IsReadyForWin()
+        {
+            return _firstPlayerScore > 3 || _secondPlayerScore > 3;
+        }
+
+        private string SameScore()
+        {
+            return _scoreDict[_firstPlayerScore] + "_All";
+        }
+
+        private static string Deuce()
+        {
+            return "Deuce";
+        }
+
+        private bool IsDeuce()
+        {
+            return _firstPlayerScore >= 3;
+        }
+
+        private bool IsSameScore()
+        {
+            return _firstPlayerScore == _secondPlayerScore;
         }
 
         public void FirstPlayerGotScore()
